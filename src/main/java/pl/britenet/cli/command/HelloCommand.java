@@ -1,6 +1,8 @@
 package pl.britenet.cli.command;
 
 import pl.britenet.cli.Constants;
+import pl.britenet.cli.model.Product;
+import pl.britenet.cli.model.builder.ProductBuilder;
 
 public class HelloCommand extends Command {
 
@@ -10,6 +12,11 @@ public class HelloCommand extends Command {
 
     @Override
     public void execute() {
-        System.out.println("Hello World!");
+        Product product = new ProductBuilder()
+                .setId(0)
+                .setName("Test")
+                .setDescription("Test Desc")
+                .setPrice(100)
+                .getProduct();
     }
 }
